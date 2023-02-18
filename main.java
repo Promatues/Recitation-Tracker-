@@ -12,7 +12,6 @@ public class main{
         //sa Toolkit at Dimension na to, kinukuha niya lang yung pinaka size ng screen mo
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenSize = toolkit.getScreenSize();
-        
         //fullscreen
         frame.setSize(screenSize.width, screenSize.height);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -35,6 +34,7 @@ public class main{
         //Title
         int frameWidth = screenSize.width;
         int frameHeight = screenSize.height;
+
         JLabel title = new JLabel("Recitation Tracker");
         title.setVisible(true);
         title.setFont(new Font("Courier new", Font.BOLD, 38));
@@ -48,7 +48,6 @@ public class main{
         frame.add(title);
 
         JLabel line = new JLabel("_______________________");
-
         line.setBounds(0, 101, frameWidth, 50);
         line.setFont(new Font("Courier new", Font.BOLD, 38));
         line.setHorizontalAlignment(JLabel.CENTER);
@@ -56,6 +55,7 @@ public class main{
         frame.add(line);
 
         JLabel exampleSection = new JLabel("ICTE101A");
+
         exampleSection.setForeground(Color.BLACK);
         exampleSection.setVisible(true);
         exampleSection.setBounds(0, 140, frameWidth, 50);
@@ -68,39 +68,21 @@ public class main{
         attendanceButton.setFont(font);
         analyticsButton.setFont(font);
         exitButton.setFont(font);
-        
         //colors ng mga button
         recitationButton.setBackground(new Color(0x889696));
         attendanceButton.setBackground(new Color(0x889696));
         analyticsButton.setBackground(new Color(0x889696));
         exitButton.setBackground(new Color(0x889696));
-        
-        //Setbound of each buttons
-        recitationButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2, 350, 55);
-        attendanceButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 75, 350, 55);
-        analyticsButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 150, 350, 55);
-        exitButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 225, 350, 55);
-        
-        //Removes white boxes inside of a button
-        recitationButton.setFocusable(false);
-        attendanceButton.setFocusable(false);
-        analyticsButton.setFocusable(false);
-        exitButton.setFocusable(false);
-        
         //sidebar naman to
         JPanel sidebar = new JPanel();
-        
         //iseset natin yung size ng sidebar
         sidebar.setPreferredSize(new Dimension(100, 0));
-        
         // Add the sidebar to the frame
         frame.add(sidebar);
         int SBframeWidth = screenSize.width;
         int SBframeHeight = screenSize.height;
-        
         // Set the bounds of the sidebar
         sidebar.setBounds(0, 0, 100, SBframeHeight);
-        
         //color ng sidebar
         sidebar.setBackground(new Color(0x5F7470));
 
@@ -116,7 +98,11 @@ public class main{
             sidebar.setBounds(0, 0, 100, SBframeHeight);
         }
 });
-        
+        //di ko malagay sa gitna eh, kaya isesetbound nalang natin
+        recitationButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2, 350, 55);
+        attendanceButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 75, 350, 55);
+        analyticsButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 150, 350, 55);
+        exitButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 225, 350, 55);
 
         //functions ng buttons
         recitationButton.addActionListener(new ActionListener(){
@@ -134,6 +120,29 @@ public class main{
                 recitationFrame.setUndecorated(true);
                 recitationFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 recitationFrame.setVisible(true);
+
+                JLabel recitation = new JLabel("Recitation");
+                recitation.setBounds(0, 100, frameWidth, 50);
+                recitation.setFont(new Font("Courier new", Font.BOLD, 38));
+                recitation.setHorizontalAlignment(JLabel.CENTER);
+                recitation.setForeground(Color.BLACK);
+                recitationFrame.add(recitation);
+
+                JLabel line = new JLabel("_______________________");
+                line.setBounds(0, 101, frameWidth, 50);
+                line.setFont(new Font("Courier new", Font.BOLD, 38));
+                line.setHorizontalAlignment(JLabel.CENTER);
+                line.setForeground(Color.BLACK);
+                recitationFrame.add(line);
+
+                JLabel exampleSection = new JLabel("ICTE101A");
+                exampleSection.setForeground(Color.BLACK);
+                exampleSection.setVisible(true);
+                exampleSection.setBounds(0, 140, frameWidth, 50);
+                exampleSection.setHorizontalAlignment(JLabel.CENTER);
+                exampleSection.setFont(new Font("Courier new", Font.BOLD, 38));
+                recitationFrame.add(exampleSection);
+
                 //sidebar naman to
                 JPanel recitationSidebar = new JPanel();
                 recitationSidebar.setPreferredSize(new Dimension(100, 0));
@@ -174,6 +183,29 @@ public class main{
                 attendanceFrame.setUndecorated(true);
                 attendanceFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 attendanceFrame.setVisible(true);
+
+                JLabel attendance = new JLabel("Attendance");
+                attendance.setBounds(0, 100, frameWidth, 50);
+                attendance.setFont(new Font("Courier new", Font.BOLD, 38));
+                attendance.setHorizontalAlignment(JLabel.CENTER);
+                attendance.setForeground(Color.BLACK);
+                attendanceFrame.add(attendance);
+
+                JLabel line = new JLabel("_______________________");
+                line.setBounds(0, 101, frameWidth, 50);
+                line.setFont(new Font("Courier new", Font.BOLD, 38));
+                line.setHorizontalAlignment(JLabel.CENTER);
+                line.setForeground(Color.BLACK);
+                attendanceFrame.add(line);
+
+                JLabel exampleSection = new JLabel("ICTE101A");
+                exampleSection.setForeground(Color.BLACK);
+                exampleSection.setVisible(true);
+                exampleSection.setBounds(0, 140, frameWidth, 50);
+                exampleSection.setHorizontalAlignment(JLabel.CENTER);
+                exampleSection.setFont(new Font("Courier new", Font.BOLD, 38));
+                attendanceFrame.add(exampleSection);            
+
                 //sidebar naman to
                 JPanel attendanceSidebar = new JPanel();
                 attendanceSidebar.setPreferredSize(new Dimension(100, 0));
@@ -208,6 +240,29 @@ public class main{
                 analyticsFrame.setUndecorated(true);
                 analyticsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 analyticsFrame.setVisible(true);
+                
+                JLabel analytics = new JLabel("Analytics");
+                analytics.setBounds(0, 100, frameWidth, 50);
+                analytics.setFont(new Font("Courier new", Font.BOLD, 38));
+                analytics.setHorizontalAlignment(JLabel.CENTER);
+                analytics.setForeground(Color.BLACK);
+                analyticsFrame.add(analytics);
+
+                JLabel line = new JLabel("_______________________");
+                line.setBounds(0, 101, frameWidth, 50);
+                line.setFont(new Font("Courier new", Font.BOLD, 38));
+                line.setHorizontalAlignment(JLabel.CENTER);
+                line.setForeground(Color.BLACK);
+                analyticsFrame.add(line);
+
+                JLabel exampleSection = new JLabel("ICTE101A");
+                exampleSection.setForeground(Color.BLACK);
+                exampleSection.setVisible(true);
+                exampleSection.setBounds(0, 140, frameWidth, 50);
+                exampleSection.setHorizontalAlignment(JLabel.CENTER);
+                exampleSection.setFont(new Font("Courier new", Font.BOLD, 38));
+                analyticsFrame.add(exampleSection);  
+                
                 //sidebar naman to
                 JPanel analyticsSidebar = new JPanel();
                 analyticsSidebar.setPreferredSize(new Dimension(100, 0));
