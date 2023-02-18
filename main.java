@@ -12,6 +12,7 @@ public class main{
         //sa Toolkit at Dimension na to, kinukuha niya lang yung pinaka size ng screen mo
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenSize = toolkit.getScreenSize();
+        
         //fullscreen
         frame.setSize(screenSize.width, screenSize.height);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -34,7 +35,6 @@ public class main{
         //Title
         int frameWidth = screenSize.width;
         int frameHeight = screenSize.height;
-
         JLabel title = new JLabel("Recitation Tracker");
         title.setVisible(true);
         title.setFont(new Font("Courier new", Font.BOLD, 38));
@@ -56,7 +56,6 @@ public class main{
         frame.add(line);
 
         JLabel exampleSection = new JLabel("ICTE101A");
-
         exampleSection.setForeground(Color.BLACK);
         exampleSection.setVisible(true);
         exampleSection.setBounds(0, 140, frameWidth, 50);
@@ -69,21 +68,39 @@ public class main{
         attendanceButton.setFont(font);
         analyticsButton.setFont(font);
         exitButton.setFont(font);
+        
         //colors ng mga button
         recitationButton.setBackground(new Color(0x889696));
         attendanceButton.setBackground(new Color(0x889696));
         analyticsButton.setBackground(new Color(0x889696));
         exitButton.setBackground(new Color(0x889696));
+        
+        //Setbound of each buttons
+        recitationButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2, 350, 55);
+        attendanceButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 75, 350, 55);
+        analyticsButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 150, 350, 55);
+        exitButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 225, 350, 55);
+        
+        //Removes white boxes inside of a button
+        recitationButton.setFocusable(false);
+        attendanceButton.setFocusable(false);
+        analyticsButton.setFocusable(false);
+        exitButton.setFocusable(false);
+        
         //sidebar naman to
         JPanel sidebar = new JPanel();
+        
         //iseset natin yung size ng sidebar
         sidebar.setPreferredSize(new Dimension(100, 0));
+        
         // Add the sidebar to the frame
         frame.add(sidebar);
         int SBframeWidth = screenSize.width;
         int SBframeHeight = screenSize.height;
+        
         // Set the bounds of the sidebar
         sidebar.setBounds(0, 0, 100, SBframeHeight);
+        
         //color ng sidebar
         sidebar.setBackground(new Color(0x5F7470));
 
@@ -99,11 +116,7 @@ public class main{
             sidebar.setBounds(0, 0, 100, SBframeHeight);
         }
 });
-        //di ko malagay sa gitna eh, kaya isesetbound nalang natin
-        recitationButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2, 350, 55);
-        attendanceButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 75, 350, 55);
-        analyticsButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 150, 350, 55);
-        exitButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 225, 350, 55);
+        
 
         //functions ng buttons
         recitationButton.addActionListener(new ActionListener(){
