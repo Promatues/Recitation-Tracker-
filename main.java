@@ -59,7 +59,6 @@ public class main{
         frame.add(line);
 
         JLabel exampleSection = new JLabel("ICTE101A");
-
         exampleSection.setForeground(Color.BLACK);
         exampleSection.setVisible(true);
         exampleSection.setBounds(0, 140, frameWidth, 50);
@@ -74,6 +73,7 @@ public class main{
         activitiesButton.setFont(font);
         analyticsButton.setFont(font);
         exitButton.setFont(font);
+        
         //colors ng mga button
         recitationButton.setBackground(new Color(0x889696));
         attendanceButton.setBackground(new Color(0x889696));
@@ -81,6 +81,7 @@ public class main{
         activitiesButton.setBackground(new Color(0x889696));
         analyticsButton.setBackground(new Color(0x889696));
         exitButton.setBackground(new Color(0x889696));
+        
         //di ko malagay sa gitna eh, kaya isesetbound nalang natin
         recitationButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2, 350, 55);
         attendanceButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 75, 350, 55);
@@ -88,6 +89,7 @@ public class main{
         activitiesButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 225, 350, 55);
         analyticsButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 425, 350, 55);
         exitButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 500, 350, 55);
+        
         //visibility
         recitationButton.setVisible(true);
         attendanceButton.setVisible(true);
@@ -95,17 +97,27 @@ public class main{
         activitiesButton.setVisible(true);
         analyticsButton.setVisible(true);
         exitButton.setVisible(true);
+        
+        //Removes little box inside a button
+        recitationButton.setFocusable(false);
+        attendanceButton.setFocusable(false);
+        analyticsButton.setFocusable(false);
+        exitButton.setFocusable(false);
 
         //sidebar naman to
         JPanel sidebar = new JPanel();
+        
         //iseset natin yung size ng sidebar
         sidebar.setPreferredSize(new Dimension(100, 0));
+        
         // Add the sidebar to the frame
         frame.add(sidebar);
         int SBframeWidth = screenSize.width;
         int SBframeHeight = screenSize.height;
+        
         // Set the bounds of the sidebar
         sidebar.setBounds(0, 0, 100, SBframeHeight);
+        
         //color ng sidebar
         sidebar.setBackground(new Color(0x5F7470));
 
