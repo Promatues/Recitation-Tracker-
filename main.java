@@ -22,12 +22,16 @@ public class main{
         //dito sa line of code na to, gagawa tayo ng mga label ng buttons
         JButton recitationButton = new JButton("Recitation");
         JButton attendanceButton = new JButton("Attendance");
+        JButton quizButton = new JButton("Quiz");
+        JButton activitiesButton = new JButton("Activity");
         JButton analyticsButton = new JButton("Analytics");
         JButton exitButton = new JButton("EXIT");
 
         //frame ng mga buttons
         frame.add(recitationButton);
         frame.add(attendanceButton);
+        frame.add(quizButton);
+        frame.add(activitiesButton);
         frame.add(analyticsButton);
         frame.add(exitButton);
 
@@ -66,13 +70,31 @@ public class main{
         //font ng mga text sa buttons
         recitationButton.setFont(font);
         attendanceButton.setFont(font);
+        quizButton.setFont(font);
+        activitiesButton.setFont(font);
         analyticsButton.setFont(font);
         exitButton.setFont(font);
         //colors ng mga button
         recitationButton.setBackground(new Color(0x889696));
         attendanceButton.setBackground(new Color(0x889696));
+        quizButton.setBackground(new Color(0x889696));
+        activitiesButton.setBackground(new Color(0x889696));
         analyticsButton.setBackground(new Color(0x889696));
         exitButton.setBackground(new Color(0x889696));
+        //di ko malagay sa gitna eh, kaya isesetbound nalang natin
+        recitationButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2, 350, 55);
+        attendanceButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 75, 350, 55);
+        quizButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 150, 350, 55);
+        activitiesButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 225, 350, 55);
+        analyticsButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 425, 350, 55);
+        exitButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 500, 350, 55);
+        //visibility
+        recitationButton.setVisible(true);
+        attendanceButton.setVisible(true);
+        quizButton.setVisible(true);
+        activitiesButton.setVisible(true);
+        analyticsButton.setVisible(true);
+        exitButton.setVisible(true);
 
         //sidebar naman to
         JPanel sidebar = new JPanel();
@@ -145,11 +167,6 @@ public class main{
                 N.setVisible(true);
         }
 });
-        //di ko malagay sa gitna eh, kaya isesetbound nalang natin
-        recitationButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2, 350, 55);
-        attendanceButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 75, 350, 55);
-        analyticsButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 150, 350, 55);
-        exitButton.setBounds((frameWidth - 350) / 2, (frameHeight + 75) / 2 + 225, 350, 55);
 
         //functions ng buttons
         recitationButton.addActionListener(new ActionListener(){
