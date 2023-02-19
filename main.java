@@ -73,6 +73,7 @@ public class main{
         attendanceButton.setBackground(new Color(0x889696));
         analyticsButton.setBackground(new Color(0x889696));
         exitButton.setBackground(new Color(0x889696));
+
         //sidebar naman to
         JPanel sidebar = new JPanel();
         //iseset natin yung size ng sidebar
@@ -86,16 +87,62 @@ public class main{
         //color ng sidebar
         sidebar.setBackground(new Color(0x5F7470));
 
-        JLabel section1 = new JLabel("section1");
+        //SECTION Tab
+        sidebar.setLayout(new BoxLayout(sidebar, BoxLayout.PAGE_AXIS));
+
+        JLabel S = new JLabel("S");
+        S.setFont(new Font("Courier new", Font.BOLD, 38));
+        sidebar.add(S);
+
+        JLabel E = new JLabel("E");
+        E.setFont(new Font("Courier new", Font.BOLD, 38));
+        sidebar.add(E);
+
+        JLabel C = new JLabel("C");
+        C.setFont(new Font("Courier new", Font.BOLD, 38));
+        sidebar.add(C);
+
+        JLabel T = new JLabel("T");
+        T.setFont(new Font("Courier new", Font.BOLD, 38));
+        sidebar.add(T);
+
+        JLabel I = new JLabel("I");
+        I.setFont(new Font("Courier new", Font.BOLD, 38));
+        sidebar.add(I);
+
+        JLabel O = new JLabel("O");
+        O.setFont(new Font("Courier new", Font.BOLD, 38));
+        sidebar.add(O);
+
+        JLabel N = new JLabel("N");
+        N.setFont(new Font("Courier new", Font.BOLD, 38));
+        sidebar.add(N);
 
         //hovering shii
         sidebar.addMouseListener(new MouseAdapter() {
             public void mouseEntered(MouseEvent e) {
                 sidebar.setBounds(0, 0, 400, SBframeHeight);
+            
+                S.setVisible(false);
+                E.setVisible(false);
+                C.setVisible(false);
+                T.setVisible(false);
+                I.setVisible(false);
+                O.setVisible(false);
+                N.setVisible(false);
+
         }
 
         public void mouseExited(MouseEvent e) {
             sidebar.setBounds(0, 0, 100, SBframeHeight);
+                
+                S.setVisible(true);
+                E.setVisible(true);
+                C.setVisible(true);
+                T.setVisible(true);
+                I.setVisible(true);
+                O.setVisible(true);
+                N.setVisible(true);
         }
 });
         //di ko malagay sa gitna eh, kaya isesetbound nalang natin
