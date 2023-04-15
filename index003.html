@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recitation Tracker</title>
+    </head>
+    <style>
+        @font-face {
+    font-family: myFont;
+    src: url(Kurale-Regular.ttf);
+}
+header{
+            text-align: center;
+            font-size: 50px;
+            margin-top:100px;
+            margin-bottom: 200px;
+            background-color: #b8bdb5;
+            padding:0;
+        }
+button.Section001 {
+            background-color: #5f7470;
+            font-size: 30px;
+            width: 350px;
+            height: 75px;
+            display: block;
+            margin: 0px;
+            margin-bottom: 20px;
+            border-radius: 0px;
+            border:0px;
+}
+button.Section002 {
+            background-color: #5f7470;
+            font-size: 30px;
+            width: 350px;
+            height: 75px;
+            display: block;
+            margin: 0px;
+            margin-bottom: 20px;
+            border-radius: 0px;
+            border:0px;
+}
+button.Section003 {
+            background-color: #b8bdb5;
+            font-size: 30px;
+            width: 350px;
+            height: 75px;
+            display: block;
+            margin: 0px;
+            margin-bottom: 20px;
+            border-radius: 0px;
+            border:0px;
+}
+button.Section004 {
+            background-color: #5f7470;
+            font-size: 30px;
+            width: 350px;
+            height: 75px;
+            display: block;
+            margin: 0px;
+            margin-bottom: 20px;
+            border-radius: 0px;
+            border:0px;
+}
+button.Section005 {
+            background-color: #5f7470;
+            font-size: 30px;
+            width: 350px;
+            height: 75px;
+            display: block;
+            margin: 0px;
+            margin-bottom: 20px;
+            border-radius: 0px;
+            border:0px;
+}
+button.add {
+    background-color: #8a897c;
+    font-size: 30px;
+    width: 190px;
+    height: 60px;
+    margin: 1% 77% 1%;
+    border-radius: 50px;
+    border: 0px;
+    float: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+button.remove {
+    background-color: #8a897c;
+    font-size: 30px;
+    width: 115px;
+    height: 60px;
+    display: block;
+    margin: 0 0 1% 1%;
+    border-radius: 50px;
+    border: 0px;
+    float: left;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+button{
+            background-color: #e0e2db;
+            font-size: 30px;
+            width: 500px;
+            height: 100px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border-radius: 50px;
+            font-family: myFont;
+            cursor: pointer;
+        }
+a{
+            text-decoration:none;
+        }
+body{
+            background-color:#b8bdb5;
+            font-family:myFont;
+            
+}
+.sidebar {
+  background-color: #5f7470;
+  font-size: 16px;
+  width: 350px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+p{
+    font-size:40px;
+    margin-top:5px;
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  /* Show the tooltip text when hovering over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+    </style>
+    <body>
+        <header>RECITATION TRACKER</header>
+           <div class="sidebar">
+               <p align="center">Section</p>
+               <a href="index.html"><button class="Section001">ICTE101A</button></a>
+               <a href="index002.html"><button class="Section002">HUMSS101A</button></a>
+               <a href="index003.html"><button class="Section003">TOPE101A</button></a>
+               <a href="index004.html"><button class="Section004">ABM101A</button></a>
+               <a href="index005.html"><button class="Section005">CART101A</button></a>
+               <div class="tooltip">
+                <button class="add" title="Click to add a new section">Add Section</button>
+              </div>
+              
+              <div class="tooltip">
+                <button class="remove" title="Click to remove the selected section">Delete</button>
+              </div>              
+            </div>
+            </div>
+
+            <a href="rbs003.html"> <button>Recitation</button></a>
+            <a href="ab003.html"> <button>Attendance</button></a>
+    </body>
+</html>

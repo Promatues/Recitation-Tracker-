@@ -1,0 +1,71 @@
+@font-face {
+    font-family: myFont;
+    src: url(Kurale-Regular.ttf);
+}
+header{
+    text-align: left;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    font-family: myFont;
+}
+.return-button{
+    background-color:#e0e2db;
+    position: fixed;
+    bottom: 20px;
+    left:20px;
+    font-size: 30px;
+    width: 90px;
+    height: 90px;
+    display: block;
+    border-radius: 45px;
+    font-family: myFont;
+    cursor: pointer;
+}
+body {
+    background-color: #b8bdb5;
+}
+.date-input {
+    display: flex;
+    margin: 0px 0px 3px 3px;
+}
+.date-input input {
+    background-color: transparent;
+    border: none;
+    font-family: myFont;
+    font-size: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 40%;
+    margin-bottom: 5px;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #b8bdb5;
+  }
+  .present {
+    background-color: #b8bdb5;
+  }
+  .absent {
+    background-color: #b8bdb5;
+  }
+  .button-container {
+    display: flex;
+  }
+  .button-container button {
+    margin-right: 7px;
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    font-family: myFont;
+    cursor: pointer;
+  }
+  
+  

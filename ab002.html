@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <title>Tracker</title>
+        <link rel="stylesheet" type="text/css" href="RecitationButtonSection - Copy.css">
+    </head>
+    <Header>HUMSS101A</Header>
+    <body>
+        <div class="date-input"><input type="date"></div>
+        <div class="back-button">
+            <a href="index002.html"> <button class="return-button">BACK</button></a>
+        </div>
+        
+        
+
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr>
+                        <td><input type="text" name="name"></td>
+                        <td>
+                            <label><input type="radio" name="status" value="absent">Absent</label>
+                            <label><input type="radio" name="status" value="present">Present</label>
+                            <label><input type="radio" name="status" value="late">Late</label>
+                        </td>
+                        <td>
+                            <Div class="button-container">
+                            <button onclick="addRow()">Add</button>
+                            <button onclick="deleteRow(this)">Delete</button>
+                            </Div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+              <script>
+                function addRow() {
+		var tableBody = document.getElementById("table-body");
+		var newRow = document.createElement("tr");
+		var nameCell = document.createElement("td");
+		var nameInput = document.createElement("input");
+		nameInput.type = "text";
+		nameInput.name = "name";
+		nameCell.appendChild(nameInput);
+		var statusCell = document.createElement("td");
+		var absentRadio = document.createElement("input");
+		absentRadio.type = "radio";
+		absentRadio.name = "status";
+		absentRadio.value = "absent";
+		var absentLabel = document.createElement("label");
+		absentLabel.appendChild(absentRadio);
+		absentLabel.appendChild(document.createTextNode("Absent"));
+		var presentRadio = document.createElement("input");
+		presentRadio.type = "radio";
+		presentRadio.name = "status";
+		presentRadio.value = "present";
+		var presentLabel = document.createElement("label");
+		presentLabel.appendChild(presentRadio);
+		presentLabel.appendChild(document.createTextNode("Present"));
+		var lateRadio = document.createElement("input");
+		lateRadio.type = "radio";
+		lateRadio.name = "status";
+		lateRadio.value = "late";
+		var lateLabel = document.createElement("label");
+		lateLabel.appendChild(lateRadio);
+		lateLabel.appendChild(document.createTextNode("Late"));
+		statusCell.appendChild(absentLabel);
+		statusCell.appendChild(presentLabel);
+		statusCell.appendChild(lateLabel);
+		var actionCell = document.createElement("td");
+		var editButton = document.createElement("button");
+		editButton.appendChild(document.createTextNode("Edit"));
+		editButton.onclick = function() { editRow(newRow) };
+		var deleteButton = document.createElement("button");
+		deleteButton.appendChild(document.createTextNode("Delete"));
+		deleteButton.onclick = function() { deleteRow(newRow) };
+		actionCell.appendChild(editButton);
+		actionCell.appendChild(deleteButton);
+		newRow.appendChild(nameCell);
+		newRow.appendChild(statusCell);
+		newRow.appendChild(actionCell);
+		tableBody.appendChild(newRow);
+	}
+
+	function editRow(row) {
+		var nameCell = row.cells[0];
+		var statusCell = row.cells[1];
+		var actionCell = row.cells[2];
+		var nameInput = document.createElement("input");
+		nameInput.type = "text";
+		nameInput.name = "name";
+		nameInput.value = nameCell.innerText;
+		nameCell.innerHTML = "";
+		nameCell.appendChild(nameInput);
+		var absentRadio = statusCell.querySelector('input[value="absent"]');
+		var presentRadio = statusCell.querySelector('input[value="present"]');
+		var lateRadio = statusCell.querySelector('input[value="late"]');
+		if (absentRadio.checked) {
+			absentRadio.setAttribute("checked", "checked");
+		} else if (presentRadio.checked) {
+			presentRadio.setAttribute("checked", "checked");
+		} else if (lateRadio.checked) {
+			lateRadio.setAttribute("checked", "checked");
+		}
+		var saveButton = document.createElement("button");
+		saveButton.appendChild(document.createTextNode("Save"));
+		saveButton.onclick = function() { saveRow(row) };
+		var cancelButton = document.createElement("button");
+		cancelButton.appendChild(document.createTextNode("Cancel"));
+		cancelButton.onclick = function() { cancelEditRow(row) };
+		actionCell.innerHTML = "";
+		actionCell.appendChild(saveButton);
+		actionCell.appendChild(cancelButton);
+	}
+
+	function saveRow(row) {
+		var nameCell = row.cells[0];
+		var statusCell = row.cells[1];
+        var actionCell = row.cells[2];
+        var nameInput = nameCell.querySelector('input[name="name"]');
+        nameCell.innerHTML = nameInput.value;
+        var absentRadio = statusCell.querySelector('input[value="absent"]');
+        var presentRadio = statusCell.querySelector('input[value="present"]');
+        var lateRadio = statusCell.querySelector('input[value="late"]');
+        if (absentRadio.checked) {
+            statusCell.innerHTML = "Absent";
+        } else if (presentRadio.checked) {
+            statusCell.innerHTML = "Present";
+        } else if (lateRadio.checked) {
+            statusCell.innerHTML = "Late";
+        }
+        var editButton = document.createElement("button");
+        editButton.appendChild(document.createTextNode("Edit"));
+        editButton.onclick = function() { editRow(row) };
+        var deleteButton = document.createElement("button");
+        deleteButton.appendChild(document.createTextNode("Delete"));
+        deleteButton.onclick = function() { deleteRow(row) };
+        actionCell.innerHTML = "";
+        actionCell.appendChild(editButton);
+        actionCell.appendChild(deleteButton);
+    }
+    
+    function cancelEditRow(row) {
+        var nameCell = row.cells[0];
+        var statusCell = row.cells[1];
+        var actionCell = row.cells[2];
+        var nameInput = nameCell.querySelector('input[name="name"]');
+        nameCell.innerHTML = nameInput.defaultValue;
+        var absentRadio = statusCell.querySelector('input[value="absent"]');
+        var presentRadio = statusCell.querySelector('input[value="present"]');
+        var lateRadio = statusCell.querySelector('input[value="late"]');
+        if (absentRadio.defaultChecked) {
+            absentRadio.setAttribute("checked", "checked");
+        } else if (presentRadio.defaultChecked) {
+            presentRadio.setAttribute("checked", "checked");
+        } else if (lateRadio.defaultChecked) {
+            lateRadio.setAttribute("checked", "checked");
+        }
+        var editButton = document.createElement("button");
+        editButton.appendChild(document.createTextNode("Edit"));
+        editButton.onclick = function() { editRow(row) };
+        var deleteButton = document.createElement("button");
+        deleteButton.appendChild(document.createTextNode("Delete"));
+        deleteButton.onclick = function() { deleteRow(row) };
+        actionCell.innerHTML = "";
+        actionCell.appendChild(editButton);
+        actionCell.appendChild(deleteButton);
+    }
+    
+    function deleteRow(row) {
+        row.parentNode.removeChild(row);
+    }
+    
+
+              </script>
+        </div>
+        
+    </body>
+</html>

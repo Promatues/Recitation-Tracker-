@@ -1,0 +1,73 @@
+@font-face {
+    font-family: myFont;
+    src: url(Kurale-Regular.ttf);
+}
+header{
+    text-align: left;
+    font-size: 50px;
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 0px;
+    font-family: myFont;
+}
+.return-button{
+    background-color:#e0e2db;
+    position: fixed;
+    bottom: 20px;
+    left:20px;
+    font-size: 30px;
+    width: 90px;
+    height: 90px;
+    display: block;
+    border-radius: 45px;
+    font-family: myFont;
+    cursor: pointer;
+}
+#myTable {
+    padding: 2%;
+    width: 50%;
+    margin: -3% 25% 0;
+    border-collapse: collapse;
+    font-family: myFont;
+}
+#myTable th, #myTable td {
+    padding: 2%;
+    text-align: left;
+    border: 1px solid black;
+}
+#button-container {
+    margin-left: 25%;
+    margin-top: 3px;
+}
+.add {
+    border-radius: 6px;
+    background-color: transparent;
+    border: none;
+    font-family: myFont;
+    font-size: 20px;
+}
+.remove {
+    border-radius: 6px;
+    background-color: transparent;
+    border: none;
+    font-family: myFont;
+    font-size: 20px;
+}
+body {
+    background-color: #b8bdb5;
+}
+select {
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    padding: 0;
+    font-family: myFont;
+}
+input[type="date"] {
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    padding: 0;
+}
+  
+  
