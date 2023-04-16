@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Recitation Tracker</title>
-    </head>
-    <style>
-        @font-face {
+    <title>Recitation Tracker</title>
+  </head>
+  <style>
+            @font-face {
             font-family: myFont;
             src: url(Kurale-Regular.ttf);
         }   
@@ -165,26 +166,84 @@
   .tooltip:hover .tooltiptext {
     visibility: visible;
   }
-    </style>
-    <body>
-        <header>RECITATION TRACKER</header>
-           <div class="sidebar">
-               <p align="center">Section</p>
-               <a href="index.html"><button class="Section001">ICTE101A</button></a>
-               <a href="index002.html"><button class="Section002">HUMSS101A</button></a>
-               <a href="index003.html"><button class="Section003">TOPE101A</button></a>
-               <a href="index004.html"><button class="Section004">ABM101A</button></a>
-               <a href="index005.html"><button class="Section005">CART101A</button></a>
-               <div class="tooltip">
-                <button class="add" title="Click to add a new section">Add Section</button>
-              </div>
-              
-              <div class="tooltip">
-                <button class="remove" title="Click to remove the selected section">Delete</button>
-              </div>              
-            </div>
+  </style>
+<body>
+  <header>RECITATION TRACKER</header>
+  <div class="sidebar">
+    <p align="center">Section</p>
+    <a href="index.html"><button class="Section001">ICTE101A</button></a>
+    <a href="index002.html"><button class="Section002">HUMSS101A</button></a>
+    <a href="index003.html"><button class="Section003">TOPE101A</button></a>
+    <a href="index004.html"><button class="Section004">ABM101A</button></a>
+    <a href="index005.html"><button class="Section005">CART101A</button></a>
 
-            <a href="rbs001.html"> <button>Recitation</button></a>
-            <a href="ab001.html"> <button>Attendance</button></a>
-    </body>
+    <div class="tooltip">
+      <button class="add" title="Click to add a new section" onclick="addSection()">Add Section</button>
+    </div>
+
+    <div class="tooltip">
+      <button class="remove" title="Click to remove the selected section" onclick="removeSection()">Delete</button>
+    </div>
+
+    <script>
+      var fileCounter = 5;
+
+      function addSection() {
+        var sectionName = prompt("Enter the section name:");
+        if (sectionName != null && sectionName.trim() != "") {
+          // Create a new button element for the section
+          var fileName = ("00" + fileCounter).slice(-3);
+          var button = document.createElement("button");
+          button.className = "section";
+          button.textContent = sectionName;
+          button.style.backgroundColor = "#5f7470";
+          button.style.fontSize = "30px";
+          button.style.width = "350px";
+          button.style.height = "75px";
+          button.style.display = "block";
+          button.style.margin = "0px";
+          button.style.marginBottom = "20px";
+          button.style.borderRadius = "0px";
+          button.style.border = "0px";
+          button.onclick = function() {
+            window.location.href = "index" + fileName + ".html";
+          };
+
+          // Append the new button to the sidebar
+          var sidebar = document.querySelector(".sidebar");
+          sidebar.insertBefore(button, sidebar.lastChild);
+
+          // Increment the file counter
+          fileCounter++;
+        }
+      }
+
+      function removeSection() {
+        var sectionName = prompt("Enter the section name to delete:");
+        if (sectionName != null && sectionName.trim() != "") {
+          // Find the button element for the section
+          var buttons = document.querySelectorAll(".section");
+          var buttonToDelete;
+          for (var i = 0; i < buttons.length; i++) {
+            if (buttons[i].textContent === sectionName) {
+              buttonToDelete = buttons[i];
+              break;
+            }
+          }
+
+          if (buttonToDelete) {
+            // Remove the button from the sidebar
+            buttonToDelete.parentNode.removeChild(buttonToDelete);
+          } else {
+            alert("Section not found.");
+          }
+        }
+      }
+    </script>
+  </div>
+
+  <a href="rbs001.html"><button>Recitation</button></a>
+  <a href="ab001.html"><button>Attendance</button></a>
+</body>
+
 </html>
